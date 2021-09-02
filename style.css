@@ -4,13 +4,13 @@
 }
 
 body{
-    padding: 2rem;
+    padding: 1rem;
     margin: auto;
     color: var(--text-color);
     background-color: var(--primary-color);
 }
 div{
-    min-width: 50%;
+    /* min-width: 50%; */
     align-items: center;
     display: block;
     
@@ -18,7 +18,7 @@ div{
 label{
     font-size: large;
     /* padding: 2rem; */
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
     margin: auto;
 }
 input{
