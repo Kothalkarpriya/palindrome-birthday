@@ -15,7 +15,7 @@ function clickHandler(e){
             year: Number(listOfDate[0])
         };
 
-        var convertDateToStr = convertDateToString(date);
+        var convertDateToStr = checkPalindromeForAllDateFormats(date);
         console.log(convertDateToStr);
     }
     // console.log(bdyDate);
@@ -52,4 +52,39 @@ function convertDateToString(date){
     return dateStr; //day: '02', month: '09', year: '2021'}
 }
 
+function getAllDateFormats(date){
+    var dateStr = convertDateToString(date);
+    var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
+    var mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
+    var yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
+    var ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2);
+    var mmddyy = dateStr.month + dateStr.day + dateStr.day.slice(-2);
+    var yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
+    return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];//['02092021', '09022021', '20210902', '020921', '090202', '210902']
+}
+
+function checkPalindromeForAllDateFormats(date){
+    var listOfPalindromes = getAllDateFormats(date);
+    var flag = false;
+    for(var i=0; i< listOfPalindromes.length;i++){
+        if(isPalindrome(listOfPalindromes[i])){
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+}
+
+function isLeapYear(year){
+    if(year % 4 === 0){
+        return true;
+    }
+    if(year % 100 === 0){
+        return true;
+    }
+    if(year % 400 === 0){
+        return true;
+    }
+    return false;
+}
 // console.log(isPalindrome("lol"))
