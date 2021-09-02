@@ -1,0 +1,36 @@
+:root{
+    --text-color:#701A75;
+    --primary-color: #E9D5FF;
+}
+
+body{
+    padding: 2rem;
+    margin: auto;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+div{
+    min-width: 50%;
+    align-items: center;
+    display: block;
+    
+}
+label{
+    font-size: large;
+    /* padding: 2rem; */
+    padding-bottom: 1rem;
+    margin: auto;
+}
+input{
+    padding: 0rem 1rem ;
+    border-radius: 0.2rem;
+    border: 2px solid var(--text-color);
+    display: flex;
+}
+button{
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 50%;
+    border-radius: 0.3rem;
+    border: 2px solid var(--text-color);
+}
