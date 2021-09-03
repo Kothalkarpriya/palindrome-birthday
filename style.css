@@ -1,36 +1,72 @@
 :root{
-    --text-color:#701A75;
-    --primary-color: #E9D5FF;
+    --primary-color:#701A75;
+    --text-color: #111111;
 }
 
 body{
-    padding: 1rem;
-    margin: auto;
-    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    /* color: var(--text-color); */
+    /* background-color: var(--primary-color); */
+    box-sizing: border-box;
+    /* max-width: 600px; */
+    /* min-width: 100px; */
+}
+nav{
+    text-align: center;
     background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 100%;
 }
 div{
     /* min-width: 50%; */
-    align-items: center;
+    color: var(--primary-color);
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
     display: block;
-    
+    margin: 3rem;
+    /* padding: 2rem; */
 }
 label{
-    font-size: large;
-    /* padding: 2rem; */
-    /* padding-bottom: 1rem; */
-    margin: auto;
+    display: block;
+    /* font-weight: 600; */
 }
 input{
-    padding: 0rem 1rem ;
-    border-radius: 0.2rem;
-    border: 2px solid var(--text-color);
-    display: flex;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    font-size: large;
+    width: 100%;
+    max-width: 200px;
 }
 button{
-    padding: 0.5rem;
-    margin: 1rem;
-    width: 50%;
-    border-radius: 0.3rem;
-    border: 2px solid var(--text-color);
+    display: block;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: auto;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bolder;
+    border: none;
+}
+.div{
+    display: block;
+    font-size: larger;
+    /* margin: 0 2rem; */
+    /* padding: 1rem; */
+}
+footer{
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    
 }
