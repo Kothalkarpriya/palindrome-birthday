@@ -15,8 +15,13 @@ function clickHandler(e){
             year: Number(listOfDate[0])
         };
 
-        var convertDateToStr = checkPalindromeForAllDateFormats(date);
-        console.log(convertDateToStr);
+        var checkPalindrome = checkPalindromeForAllDateFormats(date);
+        if(checkPalindrome){
+            output.innerText = "Hurray! Your birthday is palindrome";
+        }
+
+        var varia = getNextDate(date);
+        output.innerText = "The next date is " + varia;
     }
     // console.log(bdyDate);
 }
@@ -86,5 +91,39 @@ function isLeapYear(year){
         return true;
     }
     return false;
+}
+
+function getNextDate(date){
+    var day = date.day + 1;
+    var month = date.month;
+    var year = date.year;
+    var daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+    if(month === 2){
+        if(isLeapYear(year)){
+            if(day > 29){
+                day = 1;
+                month++;
+            }
+        } else {
+            if (day > 28) {
+                day = 1;
+                month++;
+            }
+        }
+    } else {//for other month
+        if (day > daysInMonth[month - 1]) {
+            day = 1;
+            month++;
+        }
+    }
+    if(month > 12){
+        month = 1;
+        year++;
+    }
+    return{
+        day: day,
+        month: month,
+        year:year
+    };
 }
 // console.log(isPalindrome("lol"))
