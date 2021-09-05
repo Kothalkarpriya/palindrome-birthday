@@ -21,7 +21,7 @@ function clickHandler(e) {
         } else {
             var [ctr, nextDate] = getNextPalindromeDate(date);
 
-            output.innerText = `Sad! Your Birthday is not a Palindrome ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days`;
+            output.innerText = `Sad! Your Birthday is not a Palindrome. The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr} days`;
 
         }
         // output.innerText = "The next date is " + varia;
