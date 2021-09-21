@@ -2,7 +2,18 @@ var inputDate = document.querySelector('#input-date');
 var button = document.querySelector('#btn');
 var output = document.querySelector('#output');
 
-button.addEventListener('click', clickHandler);
+button.addEventListener('click', checkInput);
+
+function checkInput(){
+    if(inputDate.value == ''){
+        // alert('Please insert the Birthdate!');
+        output.style.color = "red";
+        output.innerText = "Please insert the Birthdate";
+    }
+    else{
+        clickHandler();
+    }
+}
 
 function clickHandler(e) {
     var bdyDate = inputDate.value;
@@ -17,11 +28,12 @@ function clickHandler(e) {
 
         var checkPalindrome = checkPalindromeForAllDateFormats(date);
         if (checkPalindrome) {
+            output.style.color = "green";
             output.innerText = "Hurray! Your birthday is palindrome";
         } else {
             var [ctr, nextDate] = getNextPalindromeDate(date);
-
-            output.innerText = `Sad! Your Birthday is not a Palindrome. The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr} days`;
+            output.style.color = "red";
+            output.innerText = `Sad! Your Birthday is not a Palindrome. The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed the palindrome date by ${ctr} days`;
 
         }
         // output.innerText = "The next date is " + varia;
@@ -39,8 +51,12 @@ function reverseStr(str) {//str = Hello
 }
 
 function isPalindrome(str) {// to check is the reverse is equals to the actual string
-    var getReverse = reverseStr(str);
-    return getReverse == str;
+    if(str === reverseStr(str)){
+        return true;
+    }
+    return false;
+    // var getReverse = reverseStr(str);
+    // return getReverse == str;
 }
 
 function convertDateToString(date) {
@@ -73,24 +89,23 @@ function getAllDateFormats(date) {
 
 function checkPalindromeForAllDateFormats(date) {
     var listOfPalindromes = getAllDateFormats(date);
-    var flag = false;
+    // var flag = false;
     for (var i = 0; i < listOfPalindromes.length; i++) {
         if (isPalindrome(listOfPalindromes[i])) {
-            flag = true;
-            break;
+            return true;
         }
     }
-    return flag;
+    return false;
 }
 
 function isLeapYear(year) {
-    if (year % 4 === 0) {
+    if (year % 400 === 0) {
         return true;
     }
     if (year % 100 === 0) {
-        return true;
+        return false;
     }
-    if (year % 400 === 0) {
+    if (year % 4 === 0) {
         return true;
     }
     return false;
@@ -118,11 +133,12 @@ function getNextDate(date) {
             day = 1;
             month++;
         }
+        if (month > 12) {
+            month = 1;
+            year++;
+        }
     }
-    if (month > 12) {
-        month = 1;
-        year++;
-    }
+    
     return {
         day: day,
         month: month,

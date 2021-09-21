@@ -19,6 +19,7 @@ nav{
     padding: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     width: 100%;
+    font-size: larger;
 }
 div{
     /* min-width: 50%; */
@@ -32,6 +33,7 @@ div{
 }
 label{
     display: block;
+    font-size: larger;
     /* font-weight: 600; */
 }
 input{
@@ -39,7 +41,7 @@ input{
     margin: 1rem;
     border: 2px solid var(--primary-color);
     border-radius: 0.5rem;
-    font-size: large;
+    font-size: larger;
     width: 100%;
     max-width: 200px;
 }
@@ -56,7 +58,7 @@ button{
 }
 .div{
     display: block;
-    font-size: larger;
+    font-size: 1.8rem;
     /* margin: 0 2rem; */
     /* padding: 1rem; */
 }
@@ -64,8 +66,9 @@ footer{
     text-align: center;
     width: 100%;
     position: fixed;
+    font-size: larger;
     bottom: 0px;
-    padding: 1rem;
+    padding: 2rem;
     background-color: var(--primary-color);
     color: var(--text-color);
     
