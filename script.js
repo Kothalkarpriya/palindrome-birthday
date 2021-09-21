@@ -112,10 +112,11 @@ function isLeapYear(year) {
 }
 
 function getNextDate(date) {
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     var day = date.day + 1;
     var month = date.month;
     var year = date.year;
-    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    
     if (month === 2) {
         if (isLeapYear(year)) {
             if (day > 29) {
