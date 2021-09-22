@@ -82,7 +82,7 @@ function getAllDateFormats(date) {
     var mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
     var yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
     var ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2);
-    var mmddyy = dateStr.month + dateStr.day + dateStr.day.slice(-2);
+    var mmddyy = dateStr.month + dateStr.day + dateStr.year.slice(-2);
     var yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];//['02092021', '09022021', '20210902', '020921', '090202', '210902']
 }
